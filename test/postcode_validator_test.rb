@@ -19,7 +19,7 @@ ActiveRecord::Base.establish_connection(
 # end
 
 class ValidatesAsPostCodeTest < Test::Unit::TestCase
-	
+
 	# Valid post codes
 	def test_valid_post_codes
 		valid_post_codes.each_pair do |key, value|
@@ -78,7 +78,7 @@ class ValidatesAsPostCodeTest < Test::Unit::TestCase
 		assert PostOffice.country_name(:la) == "Lao People's Democratic Republic", "should evaluate to 'Lao People's Democratic Republic'"
 		assert PostOffice.country_name(:vi) == "Virgin Islands, U.S.", "should evaluate to 'Virgin Islands, U.S.'"
 	end
-	
+
 	# Test blank post codes
 	def test_blank_post_code_allowed
 

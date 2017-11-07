@@ -29,7 +29,7 @@ module PostOffice
     fm: ["Micronesia",'\d{5}'],
     fo: ["Faroe Islands",'\d{3}'],
     fr: ["France",'\d{5}'],
-    gb: ["United Kingdom",'[A-Z]{1}[0-9A-Z]{1}([0-9A-Z]{1,2})?[ ]?\d{1}[A-Z]{2}',
+    gb: ["United Kingdom",'[A-Z]{1}[0-9A-Z]{1}([0-9A-Z]{1,2})?[ ]?\d{1}[A-Z]{2}'],
     ge: ["Georgia",'\d{4}'],
     gf: ["French Guiana",'\d{5}'],
     gg: ["Guernsay", '[A-Z]{2}\d{1}[ ]?\d{1}[A-Z]{2}'],
@@ -160,7 +160,7 @@ module PostOffice
     sj: ["Svalbard and Jan Mayen",'\d{4}'],
     so: ["Somalia",'\d{5}'],
     tc: ["Turks and Caicos Islands",'TKCA 1ZZ'],
-    wf: ["Wallis and Futuna",'986\d{2}'],
+    wf: ["Wallis and Futuna",'986\d{2}']
   }
 
   def get_regex(code)
