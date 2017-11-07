@@ -13,10 +13,14 @@ ActiveRecord::Base.establish_connection(
 	:adapter => "sqlite3",
 	:database => ":memory:")
 
-# ActiveRecord::Base.connection.create_table(:test_records) do |t|
-# 	t.string :postcode
-# 	t.string :country_code
-# end
+ActiveRecord::Base.connection.create_table(:test_records) do |t|
+ t.string :postcode
+ t.string :country_code
+end
+ActiveRecord::Base.connection.create_table("") do |t|
+ t.string :postcode
+ t.string :country_code
+end
 
 class ValidatesAsPostCodeTest < Test::Unit::TestCase
 
