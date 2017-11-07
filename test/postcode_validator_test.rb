@@ -76,7 +76,7 @@ class ValidatesAsPostCodeTest < Test::Unit::TestCase
 	def test_country_code_name_retrieval
 		assert PostOffice.country_name(:us) == "United States", "should evaluate to 'United States'"
 		assert PostOffice.country_name(:la) == "Lao People's Democratic Republic", "should evaluate to 'Lao People's Democratic Republic'"
-		assert PostOffice.country_name(:vi) == "Virgin Islands, U.S.", "should evaluate to 'Virgin Islands, U.S.'"
+		assert PostOffice.country_name(:vi) == "Virgin Islands (US)", "should evaluate to 'Virgin Islands (US)'"
 	end
 
 	# Test blank post codes
