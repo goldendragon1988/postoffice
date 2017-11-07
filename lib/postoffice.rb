@@ -1,10 +1,12 @@
 module PostOffice
 	COUNTRY_DATA = {
+    ad: ["Andorra",'\d{6}'],
+		am: ["Armenia",'\d{4}'],
 		:us => ["United States",'\d{5}(-\d{4})?'],
 		:ca => ["Canada",'[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}'],
 		:gb => ["United Kingdom (Great Britain)",'([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {1,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR 0AA)'],
 		:cn => ["China",'([0-9]){6}'],
-		:jp => ["Japan",'\d{3}(-)?\d{4}'],      
+		:jp => ["Japan",'\d{3}(-)?\d{4}'],
 		:de => ["Germany",'\d{5}'],
 		:fr => ["France",'\d{2}[ ]?\d{3}'],
 		:au => ["Australia",'\d{4}'],
@@ -25,9 +27,7 @@ module PostOffice
 		:tw => ["Taiwan",'\d{3}(\d{2})?'],
 		:sg => ["Singapore",'\d{6}'],
 		:dz => ["Algeria",'\d{5}'],
-		:ad => ["Andorra",'AD\d{3}'],
 		:ar => ["Argentina",'([A-HJ-NP-Z])?\d{4}([A-Z]{3})?'],
-		:am => ["Armenia",'(37)?\d{4}'],
 		:az => ["Azerbaijan",'\d{4}'],
 		:bh => ["Bahrain",'((1[0-2]|[2-9])\d{2})?'],
 		:bd => ["Bangladesh",'\d{4}'],
@@ -179,11 +179,11 @@ end
 include PostOffice
 class PostcodeFormatValidator < ActiveModel::EachValidator
 	def validate_each(object, attribute, value)
-		
+
 		result = PostOffice.validate_postcode(value, options[:country_code])
 
 		if !result
-			object.errors[attribute] << (options[:message] || "entered is not a valid postcode for #{PostOffice.country_name(options[:country_code])}.") 
+			object.errors[attribute] << (options[:message] || "entered is not a valid postcode for #{PostOffice.country_name(options[:country_code])}.")
 		end
 	end
 end
