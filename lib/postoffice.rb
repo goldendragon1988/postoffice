@@ -85,7 +85,7 @@ module PostOffice
     se: ["Sweden",'\d{3}[ ]?\d{2}', '999 99'],
     sg: ["Singapore",'\d{6}', '999999'],
     si: ["Slovenia",'\d{4}', '9999'],
-    sk: ["Slovakia",'\d{3}[ ]?\d{2}'], '999 99',
+    sk: ["Slovakia",'\d{3}[ ]?\d{2}', '999 99'],
     sm: ["San Marino",'\d{5}', '99999'],
     sz: ["Swaziland",'[A-Z]{1}\d{3}', 'A999'],
     th: ["Thailand",'\d{5}', '99999'],
